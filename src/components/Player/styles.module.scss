@@ -32,7 +32,7 @@
 
 .currentEpisode {
   text-align: center;
-  
+
   img {
     border-radius: 1.5rem;
   }
@@ -94,22 +94,36 @@
 }
 
 .buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2.5rem;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+  gap: 1.5rem;
 
-    button {
-        background-color: transparent;
-        border: 0;
-        font-size: 0;
+  button {
+    background-color: transparent;
+    border: 0;
+    font-size: 0;
 
-        &.playButton {
-            width: 4rem;
-            height: 4rem;
-            border-radius: 1rem;
-            background-color: var(--purple-400);
-        }
+    transition: filter 0.2s;
+
+    &:disabled {
+      cursor: default;
     }
+
+    &:hover:not(:disabled) {
+      filter: brightness(0.7);
+    }
+
+    &.playButton {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 1rem;
+      background-color: var(--purple-400);
+
+      &:hover {
+        filter: brightness(0.95);
+      }
+    }
+  }
 }
