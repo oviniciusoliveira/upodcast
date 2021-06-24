@@ -27,9 +27,11 @@ type EpisodeProps = {
 };
 
 export default function Episode({ episode }: EpisodeProps) {
-  // Útil quando o fallback está como true
+  // fallback block: não retorna nada para os paths não indicados
   // fallback true: requisição ao backend feita no lado do client
   // fallback blocking: requisição ao backend feita pelo next
+
+  // Útil quando o fallback está como true
 
   // const router = useRouter();
 
@@ -92,7 +94,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: "blocking",
   };
 
-  // incremental static regeneration (fallback blocking)
+  // incremental static regeneration (fallback blocking e o true)
 };
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
